@@ -1,0 +1,41 @@
+.about-container {
+  background: linear-gradient(to bottom, #b3e0f2, #358dbd);
+  min-height: 100vh;
+  padding: 3% 5%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mission-section {
+  text-align: center;
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+.mission-section h2 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.mission-section p {
+  color: #e0f7fa;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.team-heading {
+  color: #ffffff;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px;
+}
