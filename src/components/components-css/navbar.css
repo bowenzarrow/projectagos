@@ -1,40 +1,15 @@
-/* Import a professional, nonprofit-style font */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: start;
+
     background-color: #f9f9f9;
     padding: 10px 20px;
     font-family: 'Open Sans', sans-serif;
     box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1);
-    gap: 20px;
-}
-
-/* Project Agos title */
-.navbar h1 {
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 16px;
-    border-radius: 8px;
-    margin: 0;
-    font-size: 24px;
-}
-
-/* Navigation links */
-.navbar a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    padding: 8px 12px;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-    border-radius: 6px;
-}
-
-.navbar a:hover {
-    background-color: #007BFF;
-    color: white;
+    flex-wrap: wrap;
+    position: relative;
 }
 
 .brand-box {
@@ -43,8 +18,9 @@
     gap: 10px;
     background-color: #007BFF;
     color: white;
-    padding: 0px 16px;
+    padding: 8px 16px;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .brand-box h1 {
@@ -55,4 +31,80 @@
 .logo {
     height: 40px;
     width: auto;
+}
+
+.dropdown-icon {
+    font-size: 14px;
+    margin-left: 6px;
+}
+
+/* Nav links container */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+@media (min-width: 769px) {
+  .dropdown-icon {
+    display: none;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+
+        
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 12px;
+        background-color: #f1f1f1;
+        border-radius: 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .nav-links a:hover {
+        background-color: #007BFF;
+        color: white;
+    }
+
+    .brand-box {
+        justify-content: space-between;
+    }
+
+    .brand-box h1 {
+        font-size: 20px;
+    }
+
+    .logo {
+        height: 32px;
+    }
 }

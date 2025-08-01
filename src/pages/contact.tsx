@@ -46,6 +46,8 @@ export const Contact = () => {
       <button type="submit">Submit</button>
       {status && <p>{status}</p>}
     </form>
+
+
     </div>
   );
 };
