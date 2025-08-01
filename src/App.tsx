@@ -9,6 +9,7 @@ import { Support } from "./pages/support";
 import { Map } from "./pages/map";
 
 import { Navbar } from "./components/navbar";
+import Footer from "./components/footer";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/support" element={<Support />}/>
             <Route path="/map" element={<Map />}/>
           </Routes>
+          <Footer />
         </Router>
     </div>
   );

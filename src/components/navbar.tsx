@@ -33,7 +33,7 @@ export const Navbar = () => {
         <a href="/about" onClick={handleLinkClick}>About</a>
         <a href="/contact" onClick={handleLinkClick}>Contact</a>
         <a href="/map" onClick={handleLinkClick}>Map</a>
-        <a href="/support" onClick={handleLinkClick}>Support</a>
+        <a href="/support" onClick={handleLinkClick}>Support us!</a>
       </div>
     </div>
   );

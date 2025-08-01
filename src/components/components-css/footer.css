@@ -1,0 +1,15 @@
+.footer {
+  background-color: #023e8a;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: auto;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;         /* Make sure it spans the full screen */
+}
