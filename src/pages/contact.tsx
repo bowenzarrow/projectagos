@@ -35,8 +35,8 @@ export const Contact = () => {
    
         <div className="contact-container">
       <h1>Contact Us!</h1>
-      <p>For any inquiries, please contact us at this email.</p>
- <form className="contact-form" ref={form} onSubmit={sendEmail}>
+      <p>For any inquiries, please contact with this form, and we will respond promptly.</p>
+      <form className="contact-form" ref={form} onSubmit={sendEmail}>
       <input type="text" name="user_name" placeholder="Your Name" required />
       <input type="email" name="user_email" placeholder="Your Email" required />
       <input type="tel" name="user_phone" placeholder="Your Phone Number" />

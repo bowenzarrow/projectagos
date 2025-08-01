@@ -1,0 +1,31 @@
+.map-page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(to bottom, #b3e0f2, #358dbd);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 2%;
+}
+
+.map-header {
+  text-align: center;
+  padding: 1rem;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+}
+
+.map-container-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3%;
+}
+
+.custom-map {
+  height: 50vh; /* smaller than full screen */
+  width: 80vw;
+  border: 4px solid #0288d1;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}

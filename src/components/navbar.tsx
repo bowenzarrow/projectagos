@@ -6,7 +6,7 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  // Handle screen resizing
+
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
     window.addEventListener("resize", handleResize);
@@ -16,7 +16,7 @@ export const Navbar = () => {
   const toggleDropdown = () => setIsOpen(prev => !prev);
 
   const handleLinkClick = () => {
-    if (isMobile) setIsOpen(false); // Only close on mobile
+    if (isMobile) setIsOpen(false); 
   };
 
   return (
