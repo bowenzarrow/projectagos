@@ -1,0 +1,41 @@
+.home-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.overlay {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 0 1rem;
+  backdrop-filter: brightness(80%);
+}
+
+.overlay h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  font-family: 'Ocean Trace', sans-serif;
+}
+
+.overlay p {
+  font-size: 1.5rem;
+  max-width: 600px;
+}
