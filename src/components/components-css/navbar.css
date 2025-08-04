@@ -22,17 +22,17 @@
 }
 
 .project-agos {
-    font-family: "Angelos";
+    font-family: "Ocean Trace";
 }
 
 .brand-box {
     display: flex;
     align-items: center;
     gap: 10px;
-    background-color: #007BFF;
+    background-color: #4196f0;
     color: white;
     padding: 8px 16px;
-    border-radius: 8px;
+    border-radius: 20px;
     cursor: pointer;
 }
 
@@ -62,12 +62,12 @@
     color: #333;
     font-weight: 600;
     padding: 8px 12px;
-    border-radius: 6px;
+    border-radius: 15px;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .nav-links a:hover {
-    background-color: #007BFF;
+    background-color: #4196f0;
     color: white;
 }
 
