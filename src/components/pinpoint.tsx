@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
-import drain from '../assets/drainage.png'
+import drain from '../assets/drainage.png';
+import './components-css/pinpoint.css'; // Create this CSS file
 
 interface MapPinpointProps {
   position: [number, number];
@@ -10,10 +11,17 @@ interface MapPinpointProps {
   description: string;
 }
 
-const customIcon = new L.Icon({
-  iconUrl: drain,
+// Create a pulsing icon using divIcon
+const customIcon = new L.DivIcon({
+  className: '',
+  html: `
+    <div class="pulse-marker">
+      <div class="pulse"></div>
+      <div class="icon" style="background-image: url(${drain})"></div>
+    </div>
+  `,
   iconSize: [60, 60],
-  iconAnchor: [15, 30],
+  iconAnchor: [30, 30],
   popupAnchor: [0, -30],
 });
 
@@ -31,7 +39,7 @@ const MapPinpoint: React.FC<MapPinpointProps> = ({ position, title, image, descr
       }}
     >
       {open && (
-        <Popup eventHandlers={{popupclose: () => setOpen(false),}}>
+        <Popup eventHandlers={{ popupclose: () => setOpen(false) }}>
           <div className="w-64">
             <h2 className="text-lg font-bold mb-2">{title}</h2>
             <img src={image} alt={title} className="w-full h-32 object-cover rounded" />
