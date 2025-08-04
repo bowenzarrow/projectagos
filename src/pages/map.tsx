@@ -2,7 +2,7 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import React from 'react';
 import MapPinpoint from '../components/pinpoint';
-import './pages-css/map.css'; // ocean-themed CSS
+import './pages-css/map.css';
 
 interface PinpointData {
   id: number;
@@ -34,6 +34,9 @@ export const Map: React.FC = () => {
         <MapContainer
           center={unionCountyCenter}
           zoom={12}
+          minZoom={12}
+          maxBounds={[[40.5, -74.4], [40.8, -74.1]]}
+          maxBoundsViscosity={10.0}
           className="custom-map"
         >
           <TileLayer

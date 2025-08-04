@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
-import pinpoint from '../assets/pinpoint.png'
+import drain from '../assets/drainage.png'
 
 interface MapPinpointProps {
   position: [number, number];
@@ -11,7 +11,7 @@ interface MapPinpointProps {
 }
 
 const customIcon = new L.Icon({
-  iconUrl: pinpoint,
+  iconUrl: drain,
   iconSize: [60, 60],
   iconAnchor: [15, 30],
   popupAnchor: [0, -30],

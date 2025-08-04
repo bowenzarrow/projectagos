@@ -1,9 +1,16 @@
+@font-face {
+  font-family: 'Ocean Trace';
+  src: url('../../assets/OceanTrace.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .map-page-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
   background: linear-gradient(to bottom, #b3e0f2, #358dbd);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Ocean Trace', sans-serif;
   padding-top: 2%;
 }
 

@@ -23,7 +23,7 @@ export const Navbar = () => {
     <div className="navbar">
       <div className="brand-box" onClick={toggleDropdown}>
         <img src={logo} alt="Logo" className="logo" />
-        <h1>Project Agos</h1>
+        <h1 className="project-agos">Project Agos</h1>
         {isMobile && (
           <span className="dropdown-icon">{isOpen ? "▲" : "▼"}</span>
         )}

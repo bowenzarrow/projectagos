@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 
+@font-face {
+  font-family: 'Angelos';
+  src: url('../../assets/Angelos.ttf') format('truetype');
+  font-weight: 1;
+  font-style: 300;
+}
+
 .navbar {
     display: flex;
     align-items: center;
@@ -9,7 +16,13 @@
     font-family: 'Open Sans', sans-serif;
     box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1);
     flex-wrap: wrap;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 100000;
+}
+
+.project-agos {
+    font-family: "Angelos";
 }
 
 .brand-box {
@@ -68,8 +81,8 @@
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
-
-        
+        background-color:#007BFF;
+        gap: 0px;
     }
 
     .nav-links {
@@ -87,7 +100,7 @@
     .nav-links a {
         padding: 12px;
         background-color: #f1f1f1;
-        border-radius: 0;
+        border-radius: 20px;
         border-bottom: 1px solid #ddd;
     }
 
