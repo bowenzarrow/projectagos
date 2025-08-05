@@ -23,17 +23,17 @@ export const Navbar = () => {
     <div className="navbar">
       <div className="brand-box" onClick={toggleDropdown}>
         <img src={logo} alt="Logo" className="logo" />
-        <h1 className="project-agos">Project Agos</h1>
+        <h1 className="project-agos">PROJECT AGOS</h1>
         {isMobile && (
           <span className="dropdown-icon">{isOpen ? "▲" : "▼"}</span>
         )}
       </div>
       <div className={`nav-links ${isOpen ? "open" : ""}`}>
-        <a href="/" onClick={handleLinkClick}>Home</a>
-        <a href="/about" onClick={handleLinkClick}>About</a>
-        <a href="/contact" onClick={handleLinkClick}>Contact</a>
-        <a href="/map" onClick={handleLinkClick}>Map</a>
-        <a href="/support" onClick={handleLinkClick}>Support us!</a>
+        <a href="/" onClick={handleLinkClick}>HOME</a>
+        <a href="/about" onClick={handleLinkClick}>ABOUT</a>
+        <a href="/contact" onClick={handleLinkClick}>CONTACT</a>
+        <a href="/map" onClick={handleLinkClick}>MAP</a>
+        <a href="/support" onClick={handleLinkClick}>SUPPORT US</a>
       </div>
     </div>
   );

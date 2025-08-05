@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&display=swap');
+
 .footer {
   width: 100%;
   box-sizing: border-box;
-  background: linear-gradient(145deg, #0077b6, #0096c7, #48cae4);
+  background: linear-gradient(145deg, #0c3864c6, #0a2c4fe6, #0c3b6a);
   color: #ffffff;
   padding: 2rem;
   display: flex;
@@ -9,7 +11,7 @@
   align-items: flex-start;
   flex-wrap: wrap;
   font-family: 'Trebuchet MS', sans-serif;
-  border-top: 4px solid #90e0ef;
+  border-top: 4px solid #104981e6;
 }
 
 .footer-left {
@@ -37,8 +39,9 @@
 }
 
 .footer-line span {
-  font-weight: 600;
-  color: #caf0f8;
+  font-weight: 500;
+  color: #ffffff;
+  font-family: 'Nata Sans', serif;
 }
 
 .social-icon {
