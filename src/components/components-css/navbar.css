@@ -19,11 +19,11 @@
     box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1);
     flex-wrap: wrap;
     position: fixed;
-    left: 0;
     top: 0;
     z-index: 100000;
     letter-spacing: .75px;
-    width: 100%;
+    width: 86.23 vw;
+
 }
 
 .project-agos {
@@ -80,6 +80,8 @@
 @media (min-width: 769px) {
   .dropdown-icon {
     display: none;
+    
+
   }
 }
 
@@ -87,8 +89,10 @@
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
-        background-color:#104981e6;
+        background-color:#6391b1;
         gap: 0px;
+        position: sticky;
+        width: 86.23 vw;
     }
 
     .nav-links {
