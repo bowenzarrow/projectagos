@@ -7,13 +7,24 @@
 
 
 .about-container {
-  background: linear-gradient(to bottom, #b3e0f2, #358dbd);
+  /*background: linear-gradient(to bottom, #b3e0f2, #358dbd);*/
+  background: transparent;
   min-height: 100vh;
   padding: 3% 5%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.background-vid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1
 }
 
 .mission-section {
@@ -49,4 +60,5 @@
   gap: 2rem;
   width: 100%;
   max-width: 1000px;
+  color: white;
 }

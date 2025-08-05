@@ -5,6 +5,10 @@ import "./pages-css/about.css";
 export const About: React.FC = () => {
   return (
     <div className="about-container">
+      <video className="background-vid" autoPlay loop muted playsInline>
+        <source src="/back2.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <section className="mission-section">
         <h2>Our Mission</h2>
         <p>

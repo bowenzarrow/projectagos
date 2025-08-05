@@ -10,7 +10,7 @@ export const Main = () => {
       </video>
       <div className="overlay">
         <h1>Welcome to Project Agos</h1>
-        <p>Where we want to fix climate change and stuff</p>
+        <p>A youth organizaiton dedicated to keeping waterways clean.</p>
       </div>
     </div>
   );
