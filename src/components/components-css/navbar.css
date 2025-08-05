@@ -8,21 +8,24 @@
   font-style: 300;
 }
 
+   html, body {
+    margin: 0;
+}
 .navbar {
 
     display: flex;
     align-items: center;
     gap: 20px;
     background-color: #ffffff;
-    padding: 10px 20px;
+    padding: 10px 0px;
     font-family: 'Nata Sans', serif;
     box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1);
     flex-wrap: wrap;
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 100000;
     letter-spacing: .75px;
-    width: 86.23 vw;
+    width: 100%;
 
 }
 
@@ -92,8 +95,11 @@
         background-color:#6391b1;
         gap: 0px;
         position: sticky;
-        width: 86.23 vw;
+        width: 100%;
+
     }
+
+ 
 
     .nav-links {
         display: none;
@@ -101,6 +107,7 @@
         width: 100%;
         margin-top: 10px;
         transition: max-height 0.4s ease, padding 0.3s ease;
+        align-items: center;
     }
 
     .nav-links.open {
@@ -112,6 +119,7 @@
         background-color: #f1f1f1;
         border-radius: 20px;
         border-bottom: 1px solid #ddd;
+        min-width: 70%;
     }
 
     .nav-links a:hover {
