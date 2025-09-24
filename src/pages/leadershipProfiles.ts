@@ -34,7 +34,7 @@ const leadership: LeaderProfilePropsList = [
     image: sarah,
   },
   {
-    name: "Alana Bavli",
+    name: "Jamie Firsichbaum",
     position: "Outreach Chair",
     schoolgrade: "MHS '27",
     image: alana,

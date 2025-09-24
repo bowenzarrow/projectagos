@@ -1,23 +1,24 @@
 import React, { useState } from 'react';
 import { Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
-import drain from '../assets/drainage.png';
-import './components-css/pinpoint.css'; // Create this CSS file
+import pinpoint from '../assets/pinpoint.png';
+import './components-css/pinpoint.css';
 
 interface MapPinpointProps {
   position: [number, number];
-  title: string;
+  location: string;     
   image: string;
-  description: string;
+  date: string;         
+  trashAmount: string;   
 }
 
-// Create a pulsing icon using divIcon
+// Pulsing icon using divIcon
 const customIcon = new L.DivIcon({
   className: '',
   html: `
     <div class="pulse-marker">
       <div class="pulse"></div>
-      <div class="icon" style="background-image: url(${drain})"></div>
+      <div class="icon" style="background-image: url(${pinpoint})"></div>
     </div>
   `,
   iconSize: [60, 60],
@@ -25,7 +26,7 @@ const customIcon = new L.DivIcon({
   popupAnchor: [0, -30],
 });
 
-const MapPinpoint: React.FC<MapPinpointProps> = ({ position, title, image, description }) => {
+const MapPinpoint: React.FC<MapPinpointProps> = ({ position, location, image, date, trashAmount }) => {
   const [open, setOpen] = useState<boolean>(false);
 
   return (
@@ -41,9 +42,10 @@ const MapPinpoint: React.FC<MapPinpointProps> = ({ position, title, image, descr
       {open && (
         <Popup eventHandlers={{ popupclose: () => setOpen(false) }}>
           <div className="w-64">
-            <h2 className="text-lg font-bold mb-2">{title}</h2>
-            <img src={image} alt={title} className="w-full h-32 object-cover rounded" />
-            <p className="mt-2 text-sm">{description}</p>
+            <h2 className="text-lg font-bold mb-2">{location}</h2>
+            <img src={image} alt={location} className="w-full h-32 object-cover rounded" />
+            <p className="mt-2 text-sm"><strong>Date:</strong> {date}</p>
+            <p className="mt-1 text-sm"><strong>Trash Collected:</strong> {trashAmount}</p>
           </div>
         </Popup>
       )}

@@ -4,12 +4,15 @@ import React from 'react';
 import MapPinpoint from '../components/pinpoint';
 import './pages-css/map.css';
 
+import rahway from '../assets/rahwayRiver.jpg'
+
 interface PinpointData {
   id: number;
   position: [number, number];
-  title: string;
+  location: string;     
   image: string;
-  description: string;
+  date: string;       
+  trashAmount: string; 
 }
 
 export const Map: React.FC = () => {
@@ -19,9 +22,10 @@ export const Map: React.FC = () => {
     {
       id: 1,
       position: [40.668, -74.2],
-      title: "Example",
-      image: "",
-      description: ""
+      location: "Union County Park",
+      image: rahway, 
+      date: "2025-09-20",
+      trashAmount: ">350 lbs",
     },
   ];
 
@@ -44,7 +48,14 @@ export const Map: React.FC = () => {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           {pinpoints.map(pin => (
-            <MapPinpoint key={pin.id} {...pin} />
+            <MapPinpoint
+              key={pin.id}
+              position={pin.position}
+              location={pin.location}
+              image={pin.image}
+              date={pin.date}
+              trashAmount={pin.trashAmount}
+            />
           ))}
         </MapContainer>
       </div>
