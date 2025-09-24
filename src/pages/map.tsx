@@ -21,8 +21,8 @@ export const Map: React.FC = () => {
   const pinpoints: PinpointData[] = [
     {
       id: 1,
-      position: [40.668, -74.2],
-      location: "Union County Park",
+      position: [40.707949, -74.292635],
+      location: "Rahway River",
       image: rahway, 
       date: "2025-09-20",
       trashAmount: ">350 lbs",
