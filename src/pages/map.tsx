@@ -37,7 +37,7 @@ export const Map: React.FC = () => {
       location: "Zimmerman Park",
       image: zimmerman, 
       date: "2025-10-05",
-      trashAmount: ">1,100 lbs",
+      trashAmount: ">750 lbs",
     },
   ];
 
