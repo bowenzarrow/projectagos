@@ -60,7 +60,7 @@
     margin-left: 6px;
 }
 
-/* Nav links container */
+
 .nav-links {
     display: flex;
     gap: 20px;
@@ -88,7 +88,7 @@
   }
 }
 
-/* Mobile adjustments */
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -137,5 +137,98 @@
 
     .logo {
         height: 32px;
+    }
+}
+
+.trash-counter {
+    margin-left: auto; 
+    margin-right: 3%;
+    background-color: #104981e6;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    min-width: 150px;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    white-space: nowrap; 
+}
+
+.trash-counter:hover {
+    transform: scale(1.05);
+}
+
+.trash-count {
+    font-size: 18px;
+}
+
+.trash-percent {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+
+.trash-label {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+
+@media (max-width: 1024px) {
+    .trash-counter {
+        min-width: 130px;
+        padding: 6px 12px;
+        gap: 6px;
+    }
+
+    .trash-count {
+        font-size: 16px;
+    }
+
+    .trash-percent,
+    .trash-label {
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .trash-counter {
+        width: 90%;
+        flex-direction: column;
+        padding: 6px 10px;
+        gap: 4px;
+        min-width: auto;
+    }
+
+    .trash-count {
+        font-size: 18px;
+    }
+
+    .trash-percent,
+    .trash-label {
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .trash-counter {
+        width: 100%;
+        padding: 4px 8px;
+        gap: 3px;
+    }
+
+    .trash-count {
+        font-size: 16px;
+    }
+
+    .trash-percent,
+    .trash-label {
+        font-size: 10px;
     }
 }
