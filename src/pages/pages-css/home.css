@@ -30,12 +30,12 @@
 }
 
 .overlay h1 {
-  font-size: 4rem;
+  font-size: 5rem;
   margin-bottom: 1rem;
-  font-family: 'Ocean Trace', sans-serif;
+  font-family: 'Livvic', sans-serif;
 }
 
 .overlay p {
-  font-size: 1.5rem;
+  font-size: 2rem;
   max-width: 600px;
 }

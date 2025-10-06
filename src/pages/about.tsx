@@ -13,7 +13,7 @@ export const About: React.FC = () => {
         <h2>Our Mission</h2>
         <p>
           Project Agos's initiative works to protect our Earth’s waterways by effectively reducing the main cause of aquatic contamination: pollution.
-          Through service work like trash cleanups near water, and installations of mesh filters on storm drains, we target waterway pollution at its source—
+          Through service work like trash cleanups near local woods, ponds, and parks, we target waterway pollution at its source—
           before it can reach rivers, and eventually, the ocean.
         </p>
       </section>

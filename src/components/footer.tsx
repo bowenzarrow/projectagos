@@ -2,8 +2,9 @@ import React from "react";
 import "./components-css/footer.css";
 import logo from "../assets/logo.png";
 import instagramIcon from "../assets/instagram.svg";
-import volunteerIcon from "../assets/volunteer.svg"; // Add your own volunteer SVG
-import remindIcon from "../assets/remind.svg"; // Add your own remind SVG
+import donateIcon from "../assets/donate.svg"; 
+import remindIcon from "../assets/remind.svg"; 
+import volunteerIcon from "../assets/volunteer.svg";
 
 const Footer: React.FC = () => {
   return (
@@ -46,6 +47,19 @@ const Footer: React.FC = () => {
             <img src={remindIcon} alt="Remind" className="social-icon" />
           </a>
         </div>
+
+         <div className="footer-line">
+          <span>Quick Links:</span>
+          <a
+            href="https://gofund.me/724c7ced9"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={donateIcon} alt="link" className="social-icon" />
+          </a>
+        </div>
+
+
       </div>
     </footer>
   );

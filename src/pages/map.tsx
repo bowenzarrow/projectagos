@@ -5,6 +5,7 @@ import MapPinpoint from '../components/pinpoint';
 import './pages-css/map.css';
 
 import rahway from '../assets/rahwayRiver.jpg'
+import zimmerman from '../assets/zimmermanPark.png'
 
 interface PinpointData {
   id: number;
@@ -18,6 +19,8 @@ interface PinpointData {
 export const Map: React.FC = () => {
   const unionCountyCenter: [number, number] = [40.6595, -74.2884];
 
+
+  //IMAGE SHOULD BE AROUND 180x130 PX
   const pinpoints: PinpointData[] = [
     {
       id: 1,
@@ -26,6 +29,15 @@ export const Map: React.FC = () => {
       image: rahway, 
       date: "2025-09-20",
       trashAmount: ">350 lbs",
+    },
+
+    {
+      id: 2,
+      position: [40.6854500354575, -74.23839923404297],
+      location: "Zimmerman Park",
+      image: zimmerman, 
+      date: "2025-10-05",
+      trashAmount: ">1,100 lbs",
     },
   ];
 

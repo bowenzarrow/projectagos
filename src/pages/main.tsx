@@ -9,8 +9,8 @@ export const Main = () => {
         Your browser does not support the video tag.
       </video>
       <div className="overlay">
-        <h1>Welcome to Project Agos</h1>
-        <p>A youth organizaiton dedicated to keeping waterways clean.</p>
+        <h1>WELCOME TO PROJECT AGOS</h1>
+        <p>A youth organization dedicated to keeping waterways clean.</p>
       </div>
     </div>
   );

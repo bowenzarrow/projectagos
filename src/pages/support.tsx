@@ -9,10 +9,9 @@ export const Support: React.FC = () => {
       <header>
         <h1>Support Project Agos</h1>
         <p>
-          Project Agos's initiative works to protect our Earth’s waterways by effectively reducing
-          the main cause of aquatic contamination: pollution. Through service work like trash
-          cleanups near water, and installations of mesh filters on storm drains, we target waterway
-          pollution at its source—before it can reach rivers, and eventually, the ocean.
+          Project Agos's initiative works to protect our Earth’s waterways by effectively reducing the main cause of aquatic contamination: pollution.
+          Through service work like trash cleanups near local woods, ponds, and parks, we target waterway pollution at its source—
+          before it can reach rivers, and eventually, the ocean.
         </p>
       </header>
 

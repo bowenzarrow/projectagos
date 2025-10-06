@@ -1,6 +1,7 @@
 import { LeaderProfilePropsList } from "../components/profile";
 import alana from "../assets/alana.png";
 import anjali from "../assets/anjali.png";
+import jamie from "../assets/jamie.png";
 import dhruv from "../assets/dhruv.png";
 import jase from "../assets/jase.png";
 import prince from "../assets/prince.png";
@@ -37,7 +38,7 @@ const leadership: LeaderProfilePropsList = [
     name: "Jamie Firsichbaum",
     position: "Outreach Chair",
     schoolgrade: "MHS '27",
-    image: alana,
+    image: jamie,
   },
   {
     name: "Prince Patel",
