@@ -6,10 +6,10 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  // Trash counter state
+
   const [trashCount, setTrashCount] = useState(0);
-  const totalTrash = 1250; // replace with your dynamic value
-  const trashPercent = 73; // replace with your dynamic value
+  const totalTrash = 1250; 
+  const trashPercent = 73; 
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -17,10 +17,10 @@ export const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Animate trash count quickly on page load
+
   useEffect(() => {
     let start = 0;
-    const duration = 750; // animation duration in ms
+    const duration = 750; 
     const stepTime = 10;
     const steps = duration / stepTime;
     const increment = totalTrash / steps;
