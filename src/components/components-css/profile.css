@@ -1,3 +1,48 @@
+.leader-card {
+  background: var(--soft-bg);
+  border-radius: 2rem;
+  box-shadow: var(--shadow-md);
+  padding: 2.2rem 1.2rem 1.5rem 1.2rem;
+  text-align: center;
+  font-family: var(--font-main);
+  color: var(--navy);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.leader-card:hover {
+  box-shadow: 0 0 0 4px var(--accent), var(--shadow-lg);
+  transform: scale(1.04);
+}
+.leader-img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  margin-bottom: 1.2rem;
+  box-shadow: var(--glow-effect);
+}
+.leader-name {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.leader-position {
+  font-size: 1.05rem;
+  color: #3a5ca8;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+.leader-grade {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  font-weight: 600;
+}
 .circlecrop {
   width: 80px;
   height: 80px;

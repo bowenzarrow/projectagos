@@ -54,6 +54,8 @@ export const Map: React.FC = () => {
           maxBounds={[[40.5, -74.4], [40.8, -74.1]]}
           maxBoundsViscosity={10.0}
           className="custom-map"
+          scrollWheelZoom={false}
+          touchZoom={false}
         >
           <TileLayer
             attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a>'

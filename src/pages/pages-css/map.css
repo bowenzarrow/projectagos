@@ -8,10 +8,12 @@
 .map-page-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  background: linear-gradient(to bottom, #b3e0f2, #358dbd);
-  font-family: 'Ocean Trace', sans-serif;
-  padding-top: 2%;
+  min-height: 60vh;
+  background: var(--soft-bg);
+  font-family: var(--font-main);
+  padding: 5.5rem 0 2.5rem 0;
+  border-radius: 2rem;
+  box-shadow: var(--shadow-md);
 }
 
 .map-header {
@@ -19,7 +21,11 @@
   padding: 1rem;
   font-size: 3rem;
   font-weight: bold;
-  color: white;
+    color: #193b6a; /* navy for visibility */
+    font-family: 'Urbanist', 'Inter', 'Manrope', 'Montserrat', sans-serif;
+    letter-spacing: 0.02em;
+    font-weight: 600;
+    text-shadow: 0 2px 8px rgba(26,35,64,0.08);
 }
 
 .map-container-wrapper {
@@ -30,9 +36,11 @@
 }
 
 .custom-map {
-  height: 50vh; /* smaller than full screen */
-  width: 80vw;
-  border: 4px solid #0288d1;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  height: 400px;
+  width: 100%;
+  border-radius: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1.5px solid #8a8f98;
+  margin-bottom: 2rem;
+  z-index: 1;
 }

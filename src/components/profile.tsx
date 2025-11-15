@@ -22,15 +22,15 @@ const LeaderProfile = ({
   if (fontsize) size = fontsize;
 
   return (
-    <div className="text-white text-center">
-        <img
-          className="justify-self-center mb-4 circlecrop"
-          src={image}
-          alt={name}
-        />
-      <h2 className={`font-bold ${size} mb-2`}>{name}</h2>
-      <p className="lg:text-xl">{position}</p>
-      <p>{schoolgrade}</p>
+    <div className="leader-card">
+      <img
+        className="leader-img"
+        src={image}
+        alt={name}
+      />
+      <h2 className="leader-name" style={{ fontSize: size }}>{name}</h2>
+      {position && <p className="leader-position">{position}</p>}
+      {schoolgrade && <p className="leader-grade">{schoolgrade}</p>}
     </div>
   );
 };

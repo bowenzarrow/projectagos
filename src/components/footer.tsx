@@ -1,68 +1,35 @@
 import React from "react";
-import "./components-css/footer.css";
-import logo from "../assets/logo.png";
 import instagramIcon from "../assets/instagram.svg";
 import donateIcon from "../assets/donate.svg"; 
 import remindIcon from "../assets/remind.svg"; 
 import volunteerIcon from "../assets/volunteer.svg";
 
-const Footer: React.FC = () => {
+const FooterButtons: React.FC = () => {
   return (
-    <footer className="footer">
-      <div className="footer-left">
-        <p>© 2025 Project Agos. All rights reserved.</p>
-        <img src={logo} alt="Logo" className="logo" />
-      </div>
-
-      <div className="footer-right">
-        <div className="footer-line">
-          <span>Follow us:</span>
-          <a
-            href="https://www.instagram.com/projectagosnj"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={instagramIcon} alt="Instagram" className="social-icon" />
-          </a>
-        </div>
-
-        <div className="footer-line">
-          <span>Join us:</span>
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfYIo2KiJRNBmk-o4AroLNnrU0lXVSAWJ0YENbJSSO3dVCSJA/viewform"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={volunteerIcon} alt="Volunteer" className="social-icon" />
-          </a>
-        </div>
-
-        <div className="footer-line">
-          <span>Keep updated:</span>
-          <a
-            href="https://www.remind.com/join/agos25"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={remindIcon} alt="Remind" className="social-icon" />
-          </a>
-        </div>
-
-         <div className="footer-line">
-          <span>Quick Links:</span>
-          <a
-            href="https://gofund.me/724c7ced9"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={donateIcon} alt="link" className="social-icon" />
-          </a>
-        </div>
-
-
-      </div>
-    </footer>
+    <div style={{
+      width: "100%",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      gap: "1.1rem",
+      padding: "0.5rem 0 0.5rem 0",
+      background: "none",
+      position: "static"
+    }}>
+      <a href="https://www.instagram.com/projectagosnj" target="_blank" rel="noopener noreferrer">
+        <img src={instagramIcon} alt="Instagram" style={{width: "22px", height: "22px", borderRadius: "50%", filter: "invert(16%) sepia(98%) saturate(1200%) hue-rotate(185deg) brightness(80%) contrast(140%)"}} />
+      </a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfYIo2KiJRNBmk-o4AroLNnrU0lXVSAWJ0YENbJSSO3dVCSJA/viewform" target="_blank" rel="noopener noreferrer">
+        <img src={volunteerIcon} alt="Volunteer" style={{width: "22px", height: "22px", borderRadius: "50%", filter: "invert(16%) sepia(98%) saturate(1200%) hue-rotate(185deg) brightness(80%) contrast(140%)"}} />
+      </a>
+      <a href="https://www.remind.com/join/agos25" target="_blank" rel="noopener noreferrer">
+        <img src={remindIcon} alt="Remind" style={{width: "22px", height: "22px", borderRadius: "50%", filter: "invert(16%) sepia(98%) saturate(1200%) hue-rotate(185deg) brightness(80%) contrast(140%)"}} />
+      </a>
+      <a href="https://gofund.me/724c7ced9" target="_blank" rel="noopener noreferrer">
+        <img src={donateIcon} alt="Donate" style={{width: "22px", height: "22px", borderRadius: "50%", filter: "invert(16%) sepia(98%) saturate(1200%) hue-rotate(185deg) brightness(80%) contrast(140%)"}} />
+      </a>
+    </div>
   );
-};
+}
 
-export default Footer;
+export default FooterButtons;

@@ -17,12 +17,12 @@ const customIcon = new L.DivIcon({
   html: `
     <div class="pulse-marker">
       <div class="pulse"></div>
-      <div class="icon" style="background-image: url(${pinpoint})"></div>
+  <div class="icon blue-pinpoint" style="background-image: url(${pinpoint})"></div>
     </div>
   `,
-  iconSize: [60, 60],
-  iconAnchor: [30, 30],
-  popupAnchor: [0, -30],
+  iconSize: [38, 38],
+  iconAnchor: [19, 19],
+  popupAnchor: [0, -19],
 });
 
 const MapPinpoint: React.FC<MapPinpointProps> = ({
