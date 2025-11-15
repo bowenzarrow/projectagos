@@ -1,6 +1,7 @@
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import './App.css';
+import emailjs from "@emailjs/browser";
 
 import FooterButtons from "./components/footer";
 import leadership from "./pages/leadershipProfiles";
@@ -32,9 +33,48 @@ function App() {
     contact: useRef<HTMLElement>(null),
   };
 
+  const form = useRef<HTMLFormElement>(null);
+  const [status, setStatus] = useState<string>("");
+  const [fields, setFields] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+
   type SectionKey = keyof typeof sectionRefs;
   const scrollToSection = (key: SectionKey) => {
     sectionRefs[key]?.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!fields.name || !fields.email || !fields.message) {
+      setStatus("Please fill out all required fields before sending.");
+      return;
+    }
+
+    if (!form.current) return;
+
+    emailjs
+      .sendForm(
+        "service_m7ykj31",
+        "template_7k7y3k8",
+        form.current,
+        "93O2nZk_kBHr85N2V"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setStatus("Message sent successfully!");
+          setFields({ name: "", email: "", message: "" });
+          form.current?.reset();
+        },
+        (error) => {
+          console.error(error.text);
+          setStatus("Failed to send message, please try again.");
+        }
+      );
   };
 
   return (
@@ -168,12 +208,33 @@ function App() {
       {/* CONTACT SECTION */}
       <section ref={sectionRefs.contact} className="contact-section">
         <h2>CONTACT US</h2>
-        <form className="contact-form">
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <textarea placeholder="Message" />
+        <form className="contact-form" ref={form} onSubmit={sendEmail}>
+          <input 
+            type="text" 
+            name="user_name"
+            placeholder="Name" 
+            required
+            value={fields.name}
+            onChange={e => setFields(f => ({ ...f, name: e.target.value }))}
+          />
+          <input 
+            type="email" 
+            name="user_email"
+            placeholder="Email" 
+            required
+            value={fields.email}
+            onChange={e => setFields(f => ({ ...f, email: e.target.value }))}
+          />
+          <textarea 
+            name="message"
+            placeholder="Message" 
+            required
+            value={fields.message}
+            onChange={e => setFields(f => ({ ...f, message: e.target.value }))}
+          />
           <button type="submit">Send Message</button>
         </form>
+        {status && <div className="status-message">{status}</div>}
         <div className="contact-info">
           <div>Email: projectagos@gmail.com</div>
           <div>Phone: (908) 472-4094</div>
