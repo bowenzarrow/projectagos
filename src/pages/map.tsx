@@ -17,9 +17,6 @@ interface PinpointData {
 }
 
 export const Map: React.FC = () => {
-  const unionCountyCenter: [number, number] = [40.6595, -74.2884];
-
-
   //IMAGE SHOULD BE AROUND 180x130 PX
   const pinpoints: PinpointData[] = [
     {
@@ -41,6 +38,9 @@ export const Map: React.FC = () => {
     },
   ];
 
+  // Calculate center point between the two locations
+  const mapCenter: [number, number] = [40.6967, -74.2655];
+
   return (
     <div className="map-page-container">
       <header className="map-header">
@@ -48,8 +48,8 @@ export const Map: React.FC = () => {
       </header>
       <div className="map-container-wrapper">
         <MapContainer
-          center={unionCountyCenter}
-          zoom={12}
+          center={mapCenter}
+          zoom={13}
           minZoom={12}
           maxBounds={[[40.5, -74.4], [40.8, -74.1]]}
           maxBoundsViscosity={10.0}

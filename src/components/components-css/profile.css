@@ -25,23 +25,34 @@
   box-shadow: var(--glow-effect);
 }
 .leader-name {
-  font-size: 1.3rem;
+  font-size: 0.8rem;
   font-weight: 900;
   color: var(--navy);
-  margin-bottom: 0.5rem;
-  letter-spacing: 1.5px;
+  margin-bottom: 0;
+  letter-spacing: -0.3px;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 .leader-position {
   font-size: 1.05rem;
   color: #3a5ca8;
   font-weight: 700;
+  margin-top: 0;
   margin-bottom: 0.2rem;
 }
 .leader-grade {
   font-size: 0.95rem;
   color: var(--text-dark);
   font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.leader-description {
+  font-size: 0.9rem;
+  color: #193b6a;
+  line-height: 1.5;
+  margin-top: 0.6rem;
+  text-align: center;
+  font-weight: 400;
 }
 .circlecrop {
   width: 80px;

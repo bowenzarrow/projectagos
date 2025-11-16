@@ -47,3 +47,63 @@
     opacity: 0.08;
   }
 }
+
+/* Popup styling to match site (beige, rounded, smooth genie animation) */
+.leaflet-popup-content-wrapper {
+  background: var(--beige-2) !important;
+  color: #193b6a !important;
+  font-family: var(--font-main) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 20px 60px rgba(10,30,60,0.12) !important;
+  border: 1px solid var(--border-grey) !important;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.35s;
+  transform-origin: bottom center;
+}
+.leaflet-popup-tip-container, .leaflet-popup-tip {
+  pointer-events: none;
+}
+.leaflet-popup-tip {
+  background: var(--beige-2) !important;
+  border-top-color: var(--beige-2) !important;
+}
+
+/* Apply genie animation when popup receives .genie-in */
+.leaflet-popup.genie-in .leaflet-popup-content-wrapper {
+  animation: genieIn 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.map-popup-content h2 {
+  margin: 0 0 6px 0;
+  font-size: 1.02rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.map-popup-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.28s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.2s;
+  cursor: pointer;
+}
+.map-popup-image:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 40px rgba(10,30,60,0.18);
+}
+
+/* Gallery modal small tweaks (reuses .form-modal and .form-modal-inner animation) */
+.image-gallery-modal {
+  background: rgba(8,12,24,0.6);
+}
+.image-gallery-inner {
+  width: min(920px, 94vw);
+  height: min(680px, 86vh);
+  background: var(--beige-2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
