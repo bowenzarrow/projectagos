@@ -1,3 +1,106 @@
+@media (max-width: 768px) {
+    .nav-links a:first-child {
+        position: sticky;
+        .navbar {
+            flex-direction: column;
+            background-color: #6391b1;
+            gap: 0px;
+            position: sticky;
+            width: 100vw;
+            min-width: 0;
+            top: 0;
+            z-index: 100000;
+            box-sizing: border-box;
+            overflow-x: auto;
+        }
+        .nav-links,
+        .nav-links.open {
+            display: inline-flex !important;
+            flex-direction: row;
+            min-width: max-content;
+            width: auto !important;
+            margin-top: 10px;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            align-items: stretch;
+            box-sizing: border-box;
+            overflow-x: visible !important;
+            white-space: nowrap;
+            scrollbar-width: thin;
+            scrollbar-color: #104981 #f1f1f1;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
+        }
+        .nav-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            background-color: #f1f1f1;
+            border-radius: 20px;
+            border-bottom: 1px solid #ddd;
+            min-width: 120px;
+            max-width: 220px;
+            margin: 0 4px;
+            text-align: center;
+            font-size: 16px;
+            white-space: nowrap;
+            scroll-snap-align: start;
+        }
+        white-space: nowrap;
+    }
+    .logo {
+        height: 28px;
+        width: auto;
+    }
+                        .nav-links,
+                        .nav-links.open {
+                            display: inline-flex !important;
+                            flex-direction: row;
+                            min-width: max-content;
+                            width: auto;
+                            margin-top: 10px;
+                            transition: max-height 0.4s ease, padding 0.3s ease;
+                            align-items: stretch;
+                            box-sizing: border-box;
+                            overflow-x: visible !important;
+                            white-space: nowrap;
+                            scrollbar-width: thin;
+                            scrollbar-color: #104981 #f1f1f1;
+                            -webkit-overflow-scrolling: touch;
+                            scroll-snap-type: x mandatory;
+                        }
+        width: 100%;
+        text-align: center;
+    }
+    .trash-counter {
+        width: 100vw;
+        min-width: 0;
+        padding: 4px 2px;
+        gap: 2px;
+        font-size: 13px;
+        border-radius: 12px;
+        margin: 0 auto;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 375px) {
+    .brand-box h1 {
+        font-size: 13px;
+        max-width: 48vw;
+    }
+    .logo {
+        height: 22px;
+    }
+    .nav-links a {
+        font-size: 13px;
+        padding: 8px 0;
+    }
+    .trash-counter {
+        font-size: 11px;
+        padding: 2px 1px;
+    }
+}
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&display=swap');
 
@@ -92,49 +195,74 @@
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
-        background-color:#6391b1;
+        background-color: #6391b1;
         gap: 0px;
         position: sticky;
-        width: 100%;
-
+        width: 100vw;
+        min-width: 0;
+        top: 0;
+        z-index: 100000;
+        box-sizing: border-box;
     }
-
- 
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-        transition: max-height 0.4s ease, padding 0.3s ease;
-        align-items: center;
-    }
-
-    .nav-links.open {
-        display: flex;
-    }
-
-    .nav-links a {
-        padding: 12px;
-        background-color: #f1f1f1;
-        border-radius: 20px;
-        border-bottom: 1px solid #ddd;
-        min-width: 70%;
-    }
-
+                        .nav-links,
+                        .nav-links.open {
+                            display: flex !important;
+                            flex-direction: row;
+                            min-width: max-content;
+                            margin-top: 10px;
+                            transition: max-height 0.4s ease, padding 0.3s ease;
+                            align-items: stretch;
+                            box-sizing: border-box;
+                            overflow-x: auto !important;
+                            white-space: nowrap;
+                            scrollbar-width: thin;
+                            scrollbar-color: #104981 #f1f1f1;
+                            -webkit-overflow-scrolling: touch;
+                            padding-left: 40vw;
+                            scroll-snap-type: x mandatory;
+                        }
+                        .nav-links a {
+                            scroll-snap-align: start;
+                        }
+            .nav-links::-webkit-scrollbar {
+                height: 6px;
+                background: #f1f1f1;
+            }
+            .nav-links::-webkit-scrollbar-thumb {
+                background: #104981;
+                border-radius: 6px;
+            }
+            .nav-links a {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 12px 18px;
+                background-color: #f1f1f1;
+                border-radius: 20px;
+                border-bottom: 1px solid #ddd;
+                min-width: 120px;
+                max-width: 220px;
+                margin: 0 4px;
+                text-align: center;
+                font-size: 16px;
+                white-space: nowrap;
+            }
     .nav-links a:hover {
         background-color: #104981e6;
         color: white;
     }
-
     .brand-box {
         justify-content: space-between;
+        width: 100vw;
+        box-sizing: border-box;
     }
-
     .brand-box h1 {
         font-size: 20px;
+        max-width: 60vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
-
     .logo {
         height: 32px;
     }

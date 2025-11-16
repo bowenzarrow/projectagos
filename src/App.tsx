@@ -8,6 +8,8 @@ import leadership from "./pages/leadershipProfiles";
 import LeaderProfile from "./components/profile";
 import Map from "./pages/map";
 import CursorParticles from "./components/CursorParticles";
+import HeroRippleTitle from "./components/HeroRippleTitle";
+import './components/components-css/agosInfoBox.css';
 
 const NAV_ITEMS = [
   { label: 'Home', ref: 'hero' },
@@ -22,6 +24,7 @@ const NAV_ITEMS = [
 ];
 
 function App() {
+  const [rippleTrigger, setRippleTrigger] = useState(0);
   const sectionRefs = {
     hero: useRef<HTMLElement>(null),
     mission: useRef<HTMLElement>(null),
@@ -53,6 +56,13 @@ function App() {
     const rect = el.getBoundingClientRect();
     const top = rect.top + window.scrollY - navHeight;
     window.scrollTo({ top, behavior: 'smooth' });
+    if (key === 'hero') {
+      // Delay ripple until scroll finishes (estimate duration)
+      const scrollDuration = 900; // ms, slower scroll
+      setTimeout(() => {
+        setRippleTrigger(t => t + 1);
+      }, scrollDuration);
+    }
   };
 
   // Keep CSS var --nav-height in sync for scroll snap padding
@@ -157,7 +167,7 @@ function App() {
           {/* Cursor particle overlay inside the beige box but behind text */}
           <CursorParticles />
           <div className="hero-content-inner">
-            <h1>PROJECT AGOS</h1>
+            <HeroRippleTitle trigger={rippleTrigger} />
             <p>Opening Doors to Waterway Success</p>
             <div className="hero-cta">
               <button 
@@ -347,7 +357,9 @@ function App() {
       </section>
 
   <FooterButtons />
-    </div>
+  {/* Agos info box overlays on right side of screen, not inside hero */}
+  <div id="agos-info-overlay"></div>
+  </div>
   );
 }
 

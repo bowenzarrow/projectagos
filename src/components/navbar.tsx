@@ -54,12 +54,15 @@ export const Navbar = () => {
         )}
       </div>
 
-      <div className={`nav-links ${isOpen ? "open" : ""}`}>
-        <a href="/" onClick={handleLinkClick}>HOME</a>
-        <a href="/about" onClick={handleLinkClick}>ABOUT</a>
-        <a href="/contact" onClick={handleLinkClick}>CONTACT</a>
-        <a href="/map" onClick={handleLinkClick}>MAP</a>
-        <a href="/support" onClick={handleLinkClick}>SUPPORT US</a>
+      <div style={{ width: '100%', overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
+        <div className={`nav-links ${isOpen ? "open" : ""}`} style={{ minWidth: 'max-content' }}>
+          <a href="/" onClick={handleLinkClick}>HOME</a>
+          <a href="/about" onClick={handleLinkClick}>ABOUT</a>
+          <a href="/contact" onClick={handleLinkClick}>CONTACT</a>
+          <a href="/map" onClick={handleLinkClick}>MAP</a>
+          <a href="/support" onClick={handleLinkClick}>SUPPORT US</a>
+          <a href="#test" style={{ background: '#ffe', color: '#333', border: '1px solid #ccc' }}>TEST LINK</a>
+        </div>
       </div>
 
       
