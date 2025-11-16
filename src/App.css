@@ -202,6 +202,85 @@ p, textarea, input {
   position: relative;
   z-index: 3; /* ensure text stays above particles */
 }
+
+/* Modal for embedded form */
+.form-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 12, 24, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  backdrop-filter: blur(3px);
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Genie swoosh animation from bottom center */
+@keyframes genieIn {
+  0% {
+    transform: scale(0.3) translateY(50vh);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.04) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.form-modal.modal-genie-in .form-modal-inner {
+  animation: genieIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.form-modal-inner {
+  width: min(1100px, 94vw);
+  height: min(880px, 92vh);
+  background: var(--beige-2);
+  border-radius: 14px;
+  box-shadow: 0 30px 80px rgba(10, 30, 60, 0.35);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 100000;
+}
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  color: #193b6a;
+  z-index: 10100;
+}
+.form-frame-wrap {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 12px;
+}
+.form-frame-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 720px) {
+  .form-modal-inner { width: 96vw; height: 92vh; }
+}
 .hero-content h1 {
   font-size: 2.6rem;
   font-weight: 800;

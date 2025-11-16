@@ -78,6 +78,16 @@ const CursorParticles: React.FC = () => {
 
     // Update & draw particles
     const next: typeof particlesRef.current = [];
+    const parent = parentRef.current;
+    if (!parent) return;
+    
+    // Get actual pixel dimensions
+    const rect = parent.getBoundingClientRect();
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const fadeRadius = Math.min(rect.width, rect.height) * 0.45; // start fading at 45% from center
+    const maxFadeRadius = Math.min(rect.width, rect.height) * 0.2; // fully transparent at 20% from center
+    
     for (const p of particlesRef.current) {
       p.life += 1;
       // apply slight upward drift and friction
@@ -86,8 +96,27 @@ const CursorParticles: React.FC = () => {
       p.vy *= 0.995;
       p.x += p.vx;
       p.y += p.vy;
-      const alpha = Math.max(0, 1 - p.life / p.maxLife);
-      if (alpha > 0) {
+      
+      // Calculate distance from center (using actual pixel coordinates)
+      const dx = p.x - centerX;
+      const dy = p.y - centerY;
+      const distFromCenter = Math.sqrt(dx * dx + dy * dy);
+      
+      // Calculate center fade multiplier (1 = full opacity far from center, 0 = transparent at center)
+      let centerFade = 1;
+      if (distFromCenter < fadeRadius) {
+        if (distFromCenter < maxFadeRadius) {
+          centerFade = 0; // fully transparent in the very center
+        } else {
+          // smooth fade between maxFadeRadius and fadeRadius
+          centerFade = (distFromCenter - maxFadeRadius) / (fadeRadius - maxFadeRadius);
+          // Apply easing for smoother transition
+          centerFade = centerFade * centerFade; // quadratic easing
+        }
+      }
+      
+      const alpha = Math.max(0, (1 - p.life / p.maxLife) * centerFade);
+      if (alpha > 0.01) { // only render if reasonably visible
         ctx.beginPath();
         ctx.fillStyle = `hsla(${p.hue}, 96%, 48%, ${Math.min(1, alpha * 1.15)})`;
         ctx.shadowColor = 'rgba(40, 160, 200, 0.55)';

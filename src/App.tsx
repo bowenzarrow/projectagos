@@ -41,6 +41,8 @@ function App() {
     email: "",
     message: ""
   });
+  const [showFormModal, setShowFormModal] = useState<boolean>(false);
+  const [modalAnimating, setModalAnimating] = useState<boolean>(false);
 
   type SectionKey = keyof typeof sectionRefs;
   const scrollToSection = (key: SectionKey) => {
@@ -158,12 +160,59 @@ function App() {
             <h1>PROJECT AGOS</h1>
             <p>Opening Doors to Waterway Success</p>
             <div className="hero-cta">
-              <button className="nav-btn" onClick={() => scrollToSection('contact')}>Get Involved</button>
+              <button 
+                className="nav-btn" 
+                onClick={() => { 
+                  setModalAnimating(true);
+                  setTimeout(() => {
+                    setShowFormModal(true);
+                  }, 100);
+                }}
+              >
+                Get Involved
+              </button>
               <button className="nav-btn" onClick={() => scrollToSection('mission')}>Our Mission</button>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Embedded form modal (opens when Get Involved clicked) */}
+      {showFormModal && (
+        <div 
+          className={`form-modal ${modalAnimating ? 'modal-genie-in' : ''}`} 
+          onClick={(e) => { 
+            if (e.target === e.currentTarget) {
+              setShowFormModal(false);
+              setModalAnimating(false);
+            }
+          }}
+        >
+          <div className="form-modal-inner">
+            <button 
+              className="modal-close" 
+              onClick={() => {
+                setShowFormModal(false);
+                setModalAnimating(false);
+              }} 
+              aria-label="Close form"
+            >
+              ×
+            </button>
+            <div className="form-frame-wrap">
+              <iframe
+                title="Get Involved Form"
+                src="https://docs.google.com/forms/d/e/1FAIpQLSfYIo2KiJRNBmk-o4AroLNnrU0lXVSAWJ0YENbJSSO3dVCSJA/viewform?embedded=true"
+                width="640"
+                height="100%"
+                frameBorder="0"
+                marginHeight={0}
+                marginWidth={0}
+              >Loading…</iframe>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* MISSION SECTION */}
       <section ref={sectionRefs.mission} className="mission-section">
