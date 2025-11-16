@@ -34,6 +34,21 @@ body {
   position: relative;
 }
 
+/* Smooth scroll with section checkpoints and hidden scrollbar */
+html, body {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory; /* hard checkpoints */
+  scroll-padding-top: var(--nav-height, 80px);
+}
+/* Hide scrollbars while keeping scroll */
+body {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none;    /* Firefox */
+}
+body::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -53,6 +68,20 @@ body::before {
   color: var(--off-white);
   margin: 0;
   min-height: 100vh;
+}
+
+/* Snap points for each major section */
+.hero-section,
+.mission-section,
+.impact-section,
+.team-section,
+.map-section,
+.success-section,
+.testimonials-section,
+.faq-section,
+.contact-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 /* Sticky Navbar */
@@ -127,9 +156,16 @@ body::before {
   z-index: 0;
   opacity: 0.5;
 }
+.cursor-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 2; /* above hero-content background but below text */
+  pointer-events: none;
+  /* normal blend for stronger blue on light background */
+}
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 3; /* above particle canvas */
   text-align: center;
   color: #193b6a;
   padding: 4rem 1.2rem;
@@ -143,6 +179,28 @@ body::before {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+/* Global selection rules: disable selection for non-paragraph UI by default */
+body :not(p):not(textarea):not(input) {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* Explicitly allow selection for paragraphs and form fields */
+p, textarea, input {
+  -webkit-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+}
+/* Opt-in: add .selectable to allow selection on any specific element */
+.selectable {
+  -webkit-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+}
+.hero-content-inner {
+  position: relative;
+  z-index: 3; /* ensure text stays above particles */
 }
 .hero-content h1 {
   font-size: 2.6rem;

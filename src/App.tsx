@@ -7,6 +7,7 @@ import FooterButtons from "./components/footer";
 import leadership from "./pages/leadershipProfiles";
 import LeaderProfile from "./components/profile";
 import Map from "./pages/map";
+import CursorParticles from "./components/CursorParticles";
 
 const NAV_ITEMS = [
   { label: 'Home', ref: 'hero' },
@@ -43,8 +44,58 @@ function App() {
 
   type SectionKey = keyof typeof sectionRefs;
   const scrollToSection = (key: SectionKey) => {
-    sectionRefs[key]?.current?.scrollIntoView({ behavior: 'smooth' });
+    const el = sectionRefs[key]?.current;
+    if (!el) return;
+    const nav = document.querySelector('.sticky-navbar') as HTMLElement | null;
+    const navHeight = (nav?.offsetHeight ?? 0) + 8; // small margin
+    const rect = el.getBoundingClientRect();
+    const top = rect.top + window.scrollY - navHeight;
+    window.scrollTo({ top, behavior: 'smooth' });
   };
+
+  // Keep CSS var --nav-height in sync for scroll snap padding
+  React.useEffect(() => {
+    const setNavHeight = () => {
+      const nav = document.querySelector('.sticky-navbar') as HTMLElement | null;
+      const h = (nav?.offsetHeight ?? 0) + 8;
+      document.documentElement.style.setProperty('--nav-height', `${h}px`);
+    };
+    setNavHeight();
+    window.addEventListener('resize', setNavHeight);
+    return () => window.removeEventListener('resize', setNavHeight);
+  }, []);
+
+  // Prevent browser zoom interactions (pinch/ctrl+wheel/ctrl +/-)
+  React.useEffect(() => {
+    const onWheel = (e: WheelEvent) => {
+      if (e.ctrlKey) {
+        e.preventDefault();
+      }
+    };
+    const onKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=' || e.key === '_')) {
+        e.preventDefault();
+      }
+    };
+    const onGesture = (e: Event) => {
+      e.preventDefault();
+    };
+    window.addEventListener('wheel', onWheel, { passive: false });
+    window.addEventListener('keydown', onKeyDown, { passive: false } as any);
+    // iOS Safari pinch gestures
+    document.addEventListener('gesturestart', onGesture as any, { passive: false });
+    document.addEventListener('gesturechange', onGesture as any, { passive: false });
+    document.addEventListener('gestureend', onGesture as any, { passive: false });
+    return () => {
+      window.removeEventListener('wheel', onWheel as any);
+      window.removeEventListener('keydown', onKeyDown as any);
+      document.removeEventListener('gesturestart', onGesture as any);
+      document.removeEventListener('gesturechange', onGesture as any);
+      document.removeEventListener('gestureend', onGesture as any);
+    };
+  }, []);
+
+  // (Magnifying glass removed as requested)
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
@@ -101,11 +152,15 @@ function App() {
           <source src="/background.mp4" type="video/mp4" />
         </video>
         <div className="hero-content">
-          <h1>PROJECT AGOS</h1>
-          <p>Opening Doors to Waterway Success</p>
-          <div className="hero-cta">
-            <button className="nav-btn" onClick={() => scrollToSection('contact')}>Get Involved</button>
-            <button className="nav-btn" onClick={() => scrollToSection('mission')}>Our Mission</button>
+          {/* Cursor particle overlay inside the beige box but behind text */}
+          <CursorParticles />
+          <div className="hero-content-inner">
+            <h1>PROJECT AGOS</h1>
+            <p>Opening Doors to Waterway Success</p>
+            <div className="hero-cta">
+              <button className="nav-btn" onClick={() => scrollToSection('contact')}>Get Involved</button>
+              <button className="nav-btn" onClick={() => scrollToSection('mission')}>Our Mission</button>
+            </div>
           </div>
         </div>
       </section>
