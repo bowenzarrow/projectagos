@@ -7,6 +7,7 @@ import { About } from "./pages/about";
 import { Contact } from "./pages/contact";
 import { Support } from "./pages/support";
 import { Map } from "./pages/map";
+import  Elizabeth  from "./pages/elizabethCleanup";
 
 import { Navbar } from "./components/navbar";
 import Footer from "./components/footer";
@@ -22,6 +23,7 @@ function App() {
             <Route path="/contact" element={<Contact />}/>
             <Route path="/support" element={<Support />}/>
             <Route path="/map" element={<Map />}/>
+            <Route path="/volunteer/elizabeth" element={<Elizabeth />}/>
           </Routes>
           <Footer />
         </Router>
